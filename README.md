@@ -133,3 +133,7 @@ bind = SUPER, SPACE, exec, GSK_RENDERER=ngl anyrun
 ## Customisation
 
 All `EDIT:` comments in each `.ron` and the `style.css` mark the values you are most likely to want to change (colours, terminal emulator, prefixes, max entries, search engines, target language, etc.).
+
+git clone https://github.com/Abhishekgit01/Hyprland.git ~/dotfiles
+mkdir -p ~/.config/anyrun
+cp -r ~/dotfiles/anyrun/* ~/.config/anyrun/
