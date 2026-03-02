@@ -1,0 +1,9 @@
+// ~/.config/anyrun/kidex.ron
+// Kidex file search plugin — requires the `kidex` daemon running
+// Start daemon: kidex &   (add to hyprland.conf exec-once)
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: max file results shown
+  max_entries: Some(5),
+)

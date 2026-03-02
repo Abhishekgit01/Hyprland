@@ -1,0 +1,22 @@
+// ~/.config/anyrun/websearch.ron
+// Web search plugin — opens results in your default browser
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: prefix to trigger web search (default is no prefix — just type a URL or "? query")
+  prefix: "?",
+
+  // EDIT: engines to show as result options
+  // Available: Google, Bing, DuckDuckGo, Ecosia, Kagi, Brave, Searx, Custom(...)
+  engines: [
+    DuckDuckGo,
+    Google,
+    Ecosia,
+    Brave,
+    // Custom search engine example:
+    // Custom(
+    //   name: "YouTube",
+    //   url: "https://www.youtube.com/results?search_query={}",
+    // ),
+  ],
+)

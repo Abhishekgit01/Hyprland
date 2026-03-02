@@ -1,0 +1,9 @@
+// ~/.config/anyrun/dictionary.ron
+// Dictionary definitions via Free Dictionary API
+// Usage: ":def serendipity"
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: prefix that triggers dictionary lookup
+  prefix: ":def",
+)

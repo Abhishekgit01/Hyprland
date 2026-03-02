@@ -1,0 +1,9 @@
+// ~/.config/anyrun/rink.ron
+// Rink — calculator, unit converter, currency, dates
+// Examples: "3 * 9", "100 USD in EUR", "100km/h in mph", "sin(pi/2)"
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: max results (usually 1 for a calculator)
+  max_entries: Some(3),
+)

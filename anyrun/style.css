@@ -1,0 +1,168 @@
+/* ~/.config/anyrun/style.css                              */
+/* macOS Spotlight / Raycast style — all plugins supported */
+/* ════════════════════════════════════════════════════════ */
+/* EDIT: Swap out colours below to match your theme         */
+
+/* ─── Colour Tokens ─────────────────────────────────────── */
+@define-color bg            rgba(20, 20, 25, 0.72);   /* EDIT: main background (translucent for blur) */
+@define-color border        rgba(255, 255, 255, 0.08); /* EDIT: window border */
+@define-color input-bg      rgba(255, 255, 255, 0.06); /* EDIT: search box fill */
+@define-color text          #f0f0f0;                   /* EDIT: primary text */
+@define-color text-muted    rgba(255, 255, 255, 0.45); /* EDIT: secondary / description text */
+@define-color accent        #007AFF;                   /* EDIT: macOS blue — selection highlight */
+@define-color accent-hover  rgba(0, 122, 255, 0.15);   /* EDIT: subtle hover tint */
+@define-color divider       rgba(255, 255, 255, 0.06); /* EDIT: section divider */
+
+/* ─── Global ─────────────────────────────────────────────── */
+* {
+  all: unset;                      /* reset GTK defaults */
+  font-family: "SF Pro Text", "Inter", "Noto Sans", sans-serif;
+  font-size: 15px;
+  color: @text;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+/* ─── Outer Window ───────────────────────────────────────── */
+#window {
+  background: transparent;
+}
+
+/* ─── Main Container ─────────────────────────────────────── */
+box#main {
+  background: @bg;
+  border-radius: 18px;
+  border: 1px solid @border;
+  padding: 10px;
+
+  /* Soft drop shadow — Hyprland's shadow setting also helps */
+  box-shadow:
+    0 4px  8px  rgba(0, 0, 0, 0.25),
+    0 16px 48px rgba(0, 0, 0, 0.45);
+}
+
+/* ─── Search Input ───────────────────────────────────────── */
+entry {
+  background: @input-bg;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 20px;
+  font-weight: 400;
+  color: @text;
+  caret-color: @accent;
+  margin-bottom: 6px;
+}
+
+entry:focus {
+  border-color: @accent;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Placeholder text */
+entry placeholder {
+  color: @text-muted;
+}
+
+/* ─── Results List ───────────────────────────────────────── */
+scrolledwindow, list {
+  background: transparent;
+}
+
+list {
+  padding: 2px 0;
+}
+
+/* ─── Plugin Group (one per plugin) ─────────────────────── */
+#plugin {
+  margin-top: 2px;
+  padding: 0;
+}
+
+/* Optional: thin divider between plugin groups */
+#plugin + #plugin {
+  border-top: 1px solid @divider;
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+/* ─── Individual Result Row ──────────────────────────────── */
+#match {
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: transparent;
+  min-height: 36px;
+}
+
+#match:hover {
+  background: @accent-hover;
+}
+
+#match:selected,
+#match:focus {
+  background: @accent;
+}
+
+/* ─── Result Icon ────────────────────────────────────────── */
+#match image {
+  margin-right: 10px;
+  min-width: 24px;
+  min-height: 24px;
+  -gtk-icon-size: 24px;
+}
+
+/* ─── Result Text ────────────────────────────────────────── */
+#match-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: @text;
+}
+
+#match-desc {
+  font-size: 12px;
+  color: @text-muted;
+  margin-top: 1px;
+}
+
+/* Override colours when row is selected */
+#match:selected #match-title,
+#match:selected #match-desc,
+#match:focus    #match-title,
+#match:focus    #match-desc {
+  color: #ffffff;
+}
+
+/* ─── Plugin Info Label (hide_plugin_info: false) ────────── */
+/* Only visible if you set hide_plugin_info: false in config  */
+#plugin-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: @text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px 2px;
+}
+
+/* ─── Rink (Calculator) ──────────────────────────────────── */
+/* Calculator results are just normal #match rows but often   */
+/* have a single large answer — make it stand out             */
+#match-title.rink-result {
+  font-size: 18px;
+  font-weight: 600;
+  color: @accent;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────── */
+scrollbar {
+  background: transparent;
+  min-width: 4px;
+}
+
+scrollbar slider {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  min-height: 30px;
+}
+
+scrollbar slider:hover {
+  background: rgba(255, 255, 255, 0.30);
+}

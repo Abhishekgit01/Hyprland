@@ -1,0 +1,13 @@
+// ~/.config/anyrun/translate.ron
+// Quick text translation
+// Usage: ":tr Hello world"  →  translates to your target language
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: prefix that triggers translation
+  prefix: ":tr",
+
+  // EDIT: target language code (ISO 639-1)
+  // Examples: "en", "fr", "de", "es", "ja", "zh"
+  language: "en",
+)

@@ -1,0 +1,9 @@
+// ~/.config/anyrun/randr.ron
+// Monitor / display management plugin
+// Quickly rotate, resize or reconfigure connected monitors
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: prefix that triggers monitor management
+  prefix: ":dp",
+)

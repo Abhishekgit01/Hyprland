@@ -1,0 +1,14 @@
+// ~/.config/anyrun/stdin.ron
+// Stdin / dmenu-style plugin
+// Pipe a list of options into anyrun from a script:
+//   echo -e "Option 1\nOption 2" | anyrun --plugins libstdin.so
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: max entries from stdin
+  max_entries: Some(15),
+
+  // Separator between value and display label in stdin input
+  // e.g. "cmd\tDisplay Name" with separator: "\t"
+  separator: None,
+)

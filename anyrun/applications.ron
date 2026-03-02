@@ -1,0 +1,14 @@
+// ~/.config/anyrun/applications.ron
+// Application launcher plugin
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // Show desktop actions (e.g. "New Window", "Incognito") as sub-results
+  desktop_actions: true,
+
+  // EDIT: max app results shown
+  max_entries: Some(5),
+
+  // EDIT: your preferred terminal for terminal-flag apps ("foot", "kitty", "alacritty", etc.)
+  terminal: Some("foot"),
+)

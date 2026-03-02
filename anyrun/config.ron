@@ -1,0 +1,68 @@
+// ~/.config/anyrun/config.ron
+// macOS Spotlight-style anyrun config — all plugins enabled
+// Customise the values marked with "EDIT:" to your liking
+
+Config(
+  // ─── Position & Size ────────────────────────────────────────────────
+  // EDIT: 0.5 = horizontally centred, 0.28 = slightly above mid-screen
+  x: Fraction(0.500000),
+  y: Fraction(0.280000),
+
+  // EDIT: width as a fraction of your monitor width (0.35 = 35%)
+  width: Fraction(0.350000),
+
+  // Height expands automatically with results; leave as 0
+  height: Absolute(0),
+
+  // ─── Behaviour ──────────────────────────────────────────────────────
+  hide_icons: false,
+  ignore_exclusive_zones: false,
+  layer: Overlay,
+
+  // Hides the plugin name label on the left of each result group
+  hide_plugin_info: true,
+
+  // Close anyrun when you click outside the window
+  close_on_click: true,
+
+  // Show results before you start typing (apps list on open)
+  show_results_immediately: true,
+
+  // EDIT: max number of results shown at once
+  max_entries: Some(10),
+
+  // ─── Plugins ────────────────────────────────────────────────────────
+  // Order matters — plugins are searched top to bottom.
+  // Each plugin also has its own .ron config file below.
+  plugins: [
+    // 1. Application launcher (desktop entries)
+    "libapplications.so",
+
+    // 2. Rink — calculator + unit converter  (type: "3 * 9", "100km in miles")
+    "librink.so",
+
+    // 3. Web search  (prefix: "?")
+    "libwebsearch.so",
+
+    // 4. File search via kidex daemon  (type a filename)
+    "libkidex.so",
+
+    // 5. Shell commands  (prefix: ":sh")
+    "libshell.so",
+
+    // 6. Unicode / symbol picker  (prefix: ":sym")
+    "libsymbols.so",
+
+    // 7. Dictionary definitions  (prefix: ":def")
+    "libdictionary.so",
+
+    // 8. Quick translation  (prefix: ":tr")
+    "libtranslate.so",
+
+    // 9. Pipe stdin lists (dmenu-style, used by scripts)
+    "libstdin.so",
+
+    // 10. Monitor / display management
+    "librandr.so",
+  ],
+)

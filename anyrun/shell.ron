@@ -1,0 +1,12 @@
+// ~/.config/anyrun/shell.ron
+// Shell command plugin — run any shell command inline
+// Usage: ":sh ls -la ~"
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: the prefix that triggers this plugin
+  prefix: ":sh",
+
+  // Show the shell output as a result entry
+  show_stderr: false,
+)

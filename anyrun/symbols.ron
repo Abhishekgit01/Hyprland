@@ -1,0 +1,12 @@
+// ~/.config/anyrun/symbols.ron
+// Unicode symbol / emoji picker
+// Usage: ":sym heart", ":sym arrow"
+// Docs: https://github.com/anyrun-org/anyrun
+
+Config(
+  // EDIT: prefix that triggers the symbol search
+  prefix: ":sym",
+
+  // EDIT: max symbol results shown
+  max_entries: Some(10),
+)
